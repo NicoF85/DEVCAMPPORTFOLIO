@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, only: %i[edit show update]
+  before_action :set_portfolio, only: %i[destroy edit show update]
 
   def index
     @portfolio_items = Portfolio.all
@@ -36,6 +36,15 @@ class PortfoliosController < ApplicationController
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @portfolio_item.destroy
+
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
