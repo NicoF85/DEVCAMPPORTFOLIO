@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class Portfolio < ApplicationRecord
+  include Placeholder
   validates :title, :body, :main_image, :thumb_image, presence: true
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }
   after_initialize :set_defaults
 
   def set_defaults
-    self.main_image ||= 'https://via.placeholder.com/600x300'
-    self.thumb_image ||= 'https://via.placeholder.com/150x75'
+    self.main_image ||= Placeholder.image_generator(height: 600, width: 300)
+    self.thumb_image ||= Placeholder.image_generator(height: 150, width: 75)
   end
 end
