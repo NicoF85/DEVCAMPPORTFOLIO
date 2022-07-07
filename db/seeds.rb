@@ -1,5 +1,5 @@
 3.times do |topic|
-    Topic.create!(title: "Topic #{topic}")
+  Topic.create!(title: "Topic #{topic}")
 end
 
 puts '3 topics created'
@@ -34,14 +34,19 @@ puts '5 skills created'
 end
 
 1.times do |portfolio_item|
-    Portfolio.create!(
-      title: "Portfolio title: #{portfolio_item}",
-      subtitle: 'Angular',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      main_image: 'https://via.placeholder.com/600x300',
-      thumb_image: 'https://via.placeholder.com/150x75'
-    )
-  end
-  
+  Portfolio.create!(
+    title: "Portfolio title: #{portfolio_item}",
+    subtitle: 'Angular',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    main_image: 'https://via.placeholder.com/600x300',
+    thumb_image: 'https://via.placeholder.com/150x75'
+  )
+end
 
 puts '10 Portfolio items created'
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(name: "Technology #{technology}")
+end
+
+puts '3 technologies items created'

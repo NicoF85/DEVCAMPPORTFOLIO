@@ -2,6 +2,8 @@
 
 class Portfolio < ApplicationRecord
   include Placeholder
+  has_many :technologies, dependent: nil
+  accepts_nested_attributes_for :technologies, reject_if: ->(attrs) { attrs['name'].blank? }
   validates :title, :body, :main_image, :thumb_image, presence: true
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails') }
   after_initialize :set_defaults
