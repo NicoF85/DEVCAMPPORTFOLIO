@@ -12,6 +12,7 @@
   </thead>
 
   <tbody>
+    <%= link_to 'New Blog', new_blog_path %>
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
@@ -27,4 +28,3 @@
 
 <br>
 
-<%= link_to 'New Blog', new_blog_path %>
