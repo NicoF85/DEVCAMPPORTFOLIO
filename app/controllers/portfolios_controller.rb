@@ -10,7 +10,9 @@ class PortfoliosController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    3.times { @portfolio_item.technologies.build }
+  end
 
   def new
     @portfolio_item = Portfolio.new
