@@ -2,6 +2,7 @@
 
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: %i[destroy edit show update]
+  layout 'portfolio'
 
   def index
     @portfolio_items = Portfolio.all
@@ -9,7 +10,9 @@ class PortfoliosController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    3.times { @portfolio_item.technologies.build }
+  end
 
   def new
     @portfolio_item = Portfolio.new
