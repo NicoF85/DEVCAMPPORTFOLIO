@@ -100,6 +100,8 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
+    petergate (1.9.1)
+      activerecord (> 4.0.0)
     pg (0.21.0)
     popper_js (2.9.3)
     puma (3.12.6)
@@ -226,6 +228,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  petergate (~> 1.7)
   pg (~> 0.18)
   puma (~> 3.0)
   rails (~> 5.0.1)
