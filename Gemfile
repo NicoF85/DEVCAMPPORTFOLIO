@@ -55,6 +55,7 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'bootstrap', '~> 5.1.3'
 gem 'devise', '~> 4.2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
