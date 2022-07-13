@@ -43,6 +43,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'erb-formatter'
   gem 'listen', '~> 3.0.5'
   gem 'rubocop'
   gem 'rubocop-performance'
@@ -55,7 +56,7 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'bootstrap', '~> 5.1.3'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise', '~> 4.2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'petergate', '~> 1.7'
