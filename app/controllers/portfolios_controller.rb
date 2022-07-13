@@ -3,11 +3,11 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: %i[destroy edit show update]
   layout 'portfolio'
-  access all: %i[show index], user: { except: %i[destroy new create update edit] },
+  access all: %i[show index], user: { except: %i[destroy new create update edit sort] },
          site_admin: :all
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
   end
 
   def show; end
@@ -52,6 +52,14 @@ class PortfoliosController < ApplicationController
       format.html { redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def sort
+    params[:order].each do |_key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    head :ok
   end
 
   private
