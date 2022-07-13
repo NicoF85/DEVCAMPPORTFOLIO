@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 module ApplicationHelper
   def login_helper(style = '')
@@ -19,6 +19,31 @@ module ApplicationHelper
     name = 'Funes Nicolas'
     msg = 'All rights reserved'
     sanitize "&copy; #{Time.zone.now.year} | <b>#{name}</b> #{msg}"
+  end
+
+  def nav_items
+    [{
+      url: root_path, title: 'Home'
+    },
+     { url: about_me_path, title: 'About Me' },
+     { url: contact_path, title: 'Contact' },
+     { url: blogs_path, title: 'Blog' },
+     { url: portfolios_path, title: 'Portfolio' }]
+  end
+
+  def nav_helper(style, tag_type)
+    nav_links = ''
+
+    nav_items.each do |item|
+      nav_link = "<#{tag_type}><a href='#{item[:url]}' " \
+                 "class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+      nav_links << nav_link
+    end
+    sanitize nav_links
+  end
+
+  def active?(path)
+    'active' if current_page? path
   end
 
   private
