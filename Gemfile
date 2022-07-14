@@ -67,4 +67,6 @@ gem 'jquery-ui-rails', '~> 6.0'
 gem 'kaminari', '~> 1.0'
 gem 'mini_magick', '~> 4.6'
 gem 'petergate', '~> 1.7'
+gem 'redis', '~> 3.3'
+gem 'twitter', '~> 6.1'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
