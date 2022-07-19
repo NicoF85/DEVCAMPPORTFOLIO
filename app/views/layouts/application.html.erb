@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><%=@page_title%></title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
     <meta name="keywords" content="<%= @seo_keywords %>"/>
@@ -16,13 +16,13 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-         <div id="background"></div>
-          <%= render "shared/application_nav"%>
+          <div id="background"></div>
+          <%= render "shared/application_nav" %>
           <%= yield %>
           <div class="mastfoot">
-	          <div class="inner">
-		          <p><%= render "shared/application_footer"%></p>
-	          </div>
+            <div class="inner">
+              <p><%= render "shared/application_footer" %></p>
+            </div>
           </div>
           <%= source_helper %>
         </div>
@@ -32,3 +32,4 @@
     </div>
   </body>
 </html>
+

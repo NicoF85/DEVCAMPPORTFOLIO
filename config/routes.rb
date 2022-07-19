@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :comments
+  mount ActionCable.server => '/cable'
+
   root to: 'pages#home'
 end
